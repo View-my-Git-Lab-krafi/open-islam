@@ -1,7 +1,7 @@
 {
-  "name": "node.js-register-login-app",
+  "name": "open-islam",
   "version": "1.0.0",
-  "description": "This is a user login and registration app using Node.js, Express, Mongoose and express-sessions. :+1:",
+  "description": "namaz tracker web app",
   "main": "server.js",
   "dependencies": {
     "bcrypt": "^5.1.0",
@@ -26,7 +26,7 @@
     "url": "git+https://github.com/FSojitra/Node.js-Register-Login-App.git"
   },
   "author": "foram sojitra",
-  "license": "ISC",
+  "license": "gpl3",
   "bugs": {
     "url": "https://github.com/FSojitra/Node.js-Register-Login-App/issues"
   },
