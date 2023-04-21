@@ -71,9 +71,9 @@ app.get("/", (req, res) => {
       }
     </script>
     
-     <meta http-equiv="refresh" content="10;url=https://vagabond-calico-passive.glitch.me/profile">
+     <meta http-equiv="refresh" content="15;url=https://vagabond-calico-passive.glitch.me/profile">
     <script>
-      var count = 10;
+      var count = 15;
       setInterval(function() {
         count--;
         document.getElementById("countdown").innerHTML = count;
@@ -104,9 +104,29 @@ app.get("/", (req, res) => {
         background-color: darkgreen;
       }
     </style>
-    <h1>Redirecting to profile page in <span id="countdown">5</span> seconds...</h1>
+    <h1>Redirecting to profile page in <span id="countdown">15</span> seconds...</h1>
     <button id="redirectButton" onclick="window.location.href='https://vagabond-calico-passive.glitch.me/profile'">Redirect Now</button>
-  
+  <br><br>
+  <a href="https://gitlab.com/krafi/open-islam/" class="fancy-button">Go to Open Islam GitLab</a>
+
+<style>
+.fancy-button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #8db600;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.25);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.fancy-button:hover {
+  background-color: #5a7d00;
+}
+</style>
   </body>
 </html>
   `);
@@ -174,6 +194,10 @@ app.post("/prayers", express.json(), (req, res) => {
   if (!name || !status || !username) {
     res.status(400).send("Missing required fields in request body");
     return;
+  }
+  if (name === "nothing special"){
+      return res.send("Prayer saved successfully");
+
   }
   // const date = new Date().toISOString();
   const date = req.body.date;
@@ -482,6 +506,8 @@ app.get("/profile", (req, res) => {
 
 
 
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -493,25 +519,61 @@ app.get("/profile", (req, res) => {
   h1 {
     font-size: 36px;
     margin-bottom: 20px;
+    
   }
   
+  
+
   
   .my-button {
-    font-size: 24px;
-    padding: 10px 20px;
-    background-color: green;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    animation: my-pulse 2s infinite;
-  }
+  font-size: 24px;
+  padding: 10px 30px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  animation: my-pulse 2s infinite;
+}
+
+.my-button::after {
+  content: "";
+  position: absolute; 
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: radial-gradient(circle, #ffffff 20%, transparent 50%); /* Add radial gradient background */
+  background-position: center;
+  transform: scale(0);
+  opacity: 0.5;
+  animation: water-bubble 2s ease-out infinite; 
   
+}
+
+@keyframes water-bubble {
+  0% {
+    transform: scale(0);
+    box-shadow: 0 0 0 0 skyblue;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.3;
+    
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+    
+  }
+}
+
   @keyframes my-pulse {
     0% {
       box-shadow: 0 0 0 0 skyblue;
     }
     70% {
-      box-shadow: 0 0 0 7px rgba(0, 128, 0, 0);
+      box-shadow: 0 0 0 10px rgba(0, 128, 0, 0);
     }
     100% {
       box-shadow: 0 0 0 0 rgba(0, 128, 0, 0);
@@ -522,9 +584,27 @@ app.get("/profile", (req, res) => {
 font-size: 36px;
 color: green;
 }
+.glow-salam {
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #00ffff, 0 0 70px #00ffff, 0 0 80px #00bfff, 0 0 100px #00bfff, 0 0 150px #00bfff;
+    }
+
+    50% {
+      text-shadow: none;
+    }
+
+    100% {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #00ffff, 0 0 70px #00ffff, 0 0 80px #00bfff, 0 0 100px #00bfff, 0 0 150px #00bfff;
+    }
+  }
 </style>
 
-      <h3>As-salamu alaykum, ${username} from our developer team</h3>
+<h3>As-salamu alaykum,<span class="glow-salam"> ${username}</span> from our developer team</h3>
+
 <button class="my-button" onclick="increment()">Wa alaykumu s-salam</button>
 
 
@@ -547,15 +627,15 @@ color: green;
     <style>
       		.widget {
 			display: none;
-			position: absolute;
+			/*position: absolute;*/
 			background-color: #fff;
 			border: 1px solid #ccc;
 			padding: 10px;
 			z-index: 999;
 		}
 
-		.option {
-			margin-bottom: 5px;
+		.option { 
+    			margin-bottom: 5px;
 		}
 
       body {
@@ -609,19 +689,6 @@ color: green;
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   <body>
     <h1>Prayer Tracker</h1>
     
@@ -632,7 +699,7 @@ color: green;
   <div id="ip_timezone"></div>
   <div id="clock"></div>
 
-
+<div style="text-align: center;">
   <div>
     <button id="fajr-button" onclick="toggleWidget('fajr')">Fajr</button>
     <div id="fajr-widget" class="widget">
@@ -676,7 +743,7 @@ color: green;
       </div>
     </div>
   </div>
-  
+
   <div>
     <button id="maghrib-button" onclick="toggleWidget('maghrib')">Maghrib</button>
     <div id="maghrib-widget" class="widget">
@@ -707,7 +774,7 @@ color: green;
     </div>
   </div>
   
-
+</div>
       
   <form id="prayer-form">
 
@@ -720,11 +787,14 @@ color: green;
     <label for="date-input">Date:</label>
     <input type="date" id="date-input" name="date">
     <button type="submit">Add Prayer</button>
+
     <script>
+
+
       document.getElementById("name-input").value = "nothing special";
       document.getElementById("status-input").value = "nothing special";
-      document.getElementById("username-input").value = "${username}";
 
+  
   let currentDate = new Date().toISOString().slice(0, 10);
   
   document.getElementById('date-input').value = currentDate;
@@ -738,9 +808,33 @@ color: green;
     <label for="date-query">Date:</label>
     <input type="date" id="date-query" name="date">
     <button type="submit">Get Prayers</button>
+    <button type="button" id="download-btn">Download</button>
   </form>
-    
-    
+
+  <script>
+    const buttond = document.querySelector('#download-btn');
+    buttond.addEventListener('click', () => {
+      const username = document.querySelector('#username-query').value;
+      const url = 'https://vagabond-calico-passive.glitch.me/download-prayers?username=${username}';
+      window.open(url);
+    });
+
+
+    setInterval(function() {
+        let usernamecheck = document.querySelector('#username-input').value;
+        let getusernamecheck = document.querySelector('#username-input').value;
+
+        if (!usernamecheck || !getusernamecheck) {
+          document.getElementById("username-input").value = "${username}";
+          document.getElementById("username-query").value = "${username}";
+          document.getElementById("name-input").value = "nothing special";
+      document.getElementById("status-input").value = "nothing special";
+          console.log("+1")
+        }
+
+}, 3000);
+  </script>
+ 
   <table id="prayers-table">
     <thead>
       <tr>
@@ -754,22 +848,9 @@ color: green;
     </tbody>
   </table>
     
-    
-
 <script>// must need to set username
-  
-  document.getElementById("username-query").value = "${username}";
-  const form = document.getElementById('username-form');
-  /*
-  form.addEventListener('submit', (event) => {
-    event.preventDefault()/
-    const username = form.elements.username.value;
-    const url = '/download-prayers?username=${encodeURIComponent(username)}';
-    const anchor = document.createElement('a');
-    anchor.href = url;
-    anchor.download = 'prayers-${username}-${new Date().toISOString()}.json';
-    anchor.click();
-  }); */
+
+
 </script>
 
 <script>
@@ -1092,12 +1173,14 @@ addPrayerForm.addEventListener("submit", async (event) => { // for text form
 }
       
   .widget {
+    text-align: center;
 			display: none;
-			position: absolute;
+      width: 15%;
+      margin: 0 auto;
 			background-color: #fff;
-			border: 1px solid #ccc;
+			border: 1px solid red;
 			padding: 10px;
-			z-index: 999;
+			
 		}
 
 h1 {
@@ -1161,16 +1244,6 @@ const ipUrl = 'https://api.ipify.org/?format=json';
    const timeApiUrl = 'https://worldtimeapi.org/api/ip/';
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
    async function getIpAddress() {
      const response = await fetch(ipUrl);
      const data = await response.json();
@@ -1214,6 +1287,9 @@ const ipUrl = 'https://api.ipify.org/?format=json';
  
 
  </script>
+
+
+
 
 
 
