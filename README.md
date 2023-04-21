@@ -45,6 +45,7 @@ It should be noted that this software does not require root access to execute, r
 
 
 ## Thank You
+
 Thank you for applying this code! We hope it is valuable to you and that you are going to employ it in your own projects.
 
 Please email me if you have any thoughts, problems, or recommendations for improvement. We respect your feedback and would appreciate hearing from you.
