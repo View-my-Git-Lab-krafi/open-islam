@@ -1,0 +1,35 @@
+
+pages:
+  image: alpine:latest
+  stage: deploy
+  script:
+    - echo 'Deploying to GitLab Pages...'
+    - mkdir .public
+    - cp -r frontend/* .public
+    - mv .public public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+  except:
+    - schedules
+    - triggers
+  when: on_success
+  allow_failure: false
+  environment:
+    name: production
+    url: https://www.krafi.info/
+
+rollback:
+  stage: deploy
+  script:
+    - echo 'Rolling back to last successful version...'
+    - git reset --hard HEAD^
+    - git push --force
+  when: on_failure
+  needs: [pages]
+
+
+
+
