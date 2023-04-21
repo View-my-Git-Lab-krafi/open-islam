@@ -1,0 +1,109 @@
+<html>
+  <head>
+    <title>Hello Button</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      button {
+        font-size: 24px;
+        padding: 10px 20px;
+        background-color: green;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 green;
+        }
+        70% {
+          box-shadow: 0 0 0 20px rgba(0, 128, 0, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(0, 128, 0, 0);
+        }
+      }
+        h2 {
+    font-size: 36px;
+    color: green;
+  }
+    </style>
+  </head>
+  <body>
+      <h2>As-salamu alaykum from our developer team</h2>
+    <button onclick="increment()">Wa alaykumu s-salam</button>
+
+    <script>
+      function increment() {
+        fetch('/increment')
+          .then(response => response.text())
+          .then(newCount => {
+            document.querySelector('h2').textContent = 'Thanks for your salam, The number of times people said Wa alaykumu s-salam: ' + newCount;
+          });
+      }
+    </script>
+    
+     <meta http-equiv="refresh" content="15;url=https://vagabond-calico-passive.glitch.me/profile">
+    <script>
+      var count = 15;
+      setInterval(function() {
+        count--;
+        document.getElementById("countdown").innerHTML = count;
+        if (count == 0) {
+          clearInterval();
+          document.getElementById("redirectButton").click();
+        }
+      }, 1000);
+    </script>
+    <style>
+      body {
+        background-color: white;
+        text-align: center;
+        font-size: 2rem;
+        margin-top: 10%;
+      }
+      button {
+        font-size: 1rem;
+        padding: 1rem 2rem;
+        margin-top: 2rem;
+        background-color: green;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      button:hover {
+        background-color: darkgreen;
+      }
+    </style>
+    <h1>Redirecting to profile page in <span id="countdown">15</span> seconds...</h1>
+    <button id="redirectButton" onclick="window.location.href='https://vagabond-calico-passive.glitch.me/profile'">Redirect Now</button>
+  <br><br>
+  <a href="https://gitlab.com/krafi/open-islam/" class="fancy-button">Go to Open Islam GitLab</a>
+
+<style>
+.fancy-button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #8db600;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.25);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.fancy-button:hover {
+  background-color: #5a7d00;
+}
+</style>
+  </body>
+</html>
