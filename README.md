@@ -30,10 +30,12 @@ We take user privacy and security seriously. All user data is encrypted and regu
 Thank you for considering Open Islam as your prayer diary application. We hope it helps you improve your spiritual practices and deepen your connection with Allah.
 
 
-### License
+## License
+
 The GNU General Public License v3.0 applies to this project. Please consult the LICENSE file in the repository's root directory for further details.
 
-### Disclaimer
+## Disclaimer
+
 While we consider the code in this repository is generally safe, it is supplied with no express or implied warranties. The authors of this code are not held accountable for any harm or liabilities incurred by the use or abuse of this code. By using this code, users are responsible for ensuring that they comply with all relevant laws, rules, or policies.
 
 It should be noted that this software does not require root access to execute, reducing the possibility of unintended consequences. None the less, by using this code, you consent to shouldering all costs and obligations connected with its use, and you agree to indemnify and keep the authors of this code blameless from any claims, damages, or other liabilities that may occur as a result of your use of this code.
